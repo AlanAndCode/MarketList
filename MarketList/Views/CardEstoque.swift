@@ -11,9 +11,13 @@ import SwiftUI
 struct CardEstoque: View {
     var nome: String
     @State private var quantidade = 0
-
+    @ObservedObject var viewModel: CardEstoqueViewModel
         var body: some View {
             HStack {
+                List(viewModel.itensEmEstoque, id: \.id) { item in
+                    Text(item.nome)
+                }
+                .navigationTitle("Em Estoque")
                 VStack(alignment: .leading, spacing: 8) {
                     Text(nome)
                         .font(.headline)
@@ -53,5 +57,5 @@ struct CardEstoque: View {
     }
 
 #Preview {
-    CardEstoque(nome: "arroz")
+    CardEstoque(nome: "arroz", viewModel: CardEstoqueViewModel())
 }

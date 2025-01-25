@@ -11,8 +11,13 @@ import SwiftUI
 struct CardVamosComprar: View {
     var nome: String
     @State private var quantidade = 0
-
+    @ObservedObject var viewModel: ListaDeComprasViewModel
+        
     var body: some View {
+        List(viewModel.itensEmFalta, id: \.id) { item in
+            Text(item.nome)
+        }
+        .navigationTitle("Vamos Comprar")
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text(nome)
@@ -25,7 +30,7 @@ struct CardVamosComprar: View {
             
             Spacer()
             
-            // Botão de Adicionar
+    
             Button(action: {
                 quantidade += 1 // Incrementa a quantidade
             }) {
@@ -54,5 +59,5 @@ struct CardVamosComprar: View {
 }
 
 #Preview {
-    CardVamosComprar(nome: "Arroz")
+    CardVamosComprar(nome: "Arroz", viewModel: ListaDeComprasViewModel())
 }

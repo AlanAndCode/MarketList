@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum Status: String {
+    case emFalta = "Em Falta"
+    case emLista = "Em Lista"
+    case emEstoque = "Em Estoque"
+}

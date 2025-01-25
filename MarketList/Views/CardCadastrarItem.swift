@@ -11,43 +11,40 @@ import SwiftUI
 struct CardCadastrarItem: View {
     @State private var nomeProduto: String = ""
     @State private var quantidade: String = ""
-
+    @ObservedObject var viewModel: CardCadastrarItemViewModel
     var body: some View {
         ZStack {
             Color.yellow
-                .ignoresSafeArea() // Fundo amarelo ocupa toda a tela
+                .ignoresSafeArea()
 
             VStack {
-                // Exibe o ícone do carrinho em cima do fundo amarelo usando HStack
+                
                 HStack {
                     Image(systemName: "cart")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100)
                         .foregroundColor(.black)
-                        .padding(.leading, 20) // Adiciona um espaço à esquerda para alinhamento
+                        .padding(.leading, 20)
 
-                    Spacer() // Preenche o restante do espaço na horizontal
+                    Spacer()
                 }
-                .padding(.bottom, 40) // Espaçamento entre o ícone e os campos
+                .padding(.bottom, 40)
 
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Cadastrar Item")
                         .font(.headline)
                         .padding(.bottom, 8)
 
-                    // Campo para Nome do Produto
                     TextField("Nome do Produto", text: $nomeProduto)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
 
-                    // Campo para Quantidade
                     TextField("Quantidade", text: $quantidade)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                         .keyboardType(.numberPad)
 
-                    // Botão de Cadastrar
                     Button(action: {
                         cadastrarItem()
                     }) {
@@ -73,12 +70,11 @@ struct CardCadastrarItem: View {
         }
     }
 
-    // Função para cadastrar item (placeholder)
     private func cadastrarItem() {
         print("Produto: \(nomeProduto), Quantidade: \(quantidade)")
     }
 }
 
 #Preview {
-    CardCadastrarItem()
+    CardCadastrarItem(viewModel: CardCadastrarItemViewModel())
 }
