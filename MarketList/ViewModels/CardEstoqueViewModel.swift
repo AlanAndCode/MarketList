@@ -11,7 +11,9 @@ import SwiftUI
 
 class CardEstoqueViewModel: ObservableObject {
     @Published var itens: [Item] = []
-
+    @Published var itensEmFalta: [Item] = []
+    @Published var itensEmEstoque: [Item] = []
+    @Published var itensEmLista: [Item] = []
     func atualizarItens(_ novosItens: [Item]) {
         itens = novosItens
     }

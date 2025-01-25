@@ -9,28 +9,27 @@ import Foundation
 import SwiftUI
 
 class ListaDeComprasViewModel: ObservableObject {
-    @Published var itens: [Item] = []
-    
-    
-    func adicionarItem(nome: String, quantidade: Int, estado: Localizacao) {
-        let novoItem = Item(nome: nome, quantidade: quantidade, estado: estado)
-        itens.append(novoItem)
+    @Published var itensEmFalta: [Item] = []
+    @Published var itensEmEstoque: [Item] = []
+    @Published var itensEmLista: [Item] = []
+
+    // Função para adicionar um item à lista em falta
+    func adicionarItemEmFalta(nome: String, quantidade: Int) {
+        let novoItem = Item(nome: nome, quantidade: quantidade, status: .emFalta)
+        itensEmFalta.append(novoItem)
     }
-    
-    
-    func adicionarQuantidadeParaItem(_ item: Item) {
-        if let index = itens.firstIndex(where: { $0.id == item.id }) {
-            itens[index].quantidade += 1
-        }
+
+    // Função para adicionar um item à lista em estoque
+    func adicionarItemEmEstoque(nome: String, quantidade: Int) {
+        let novoItem = Item(nome: nome, quantidade: quantidade, status: .emEstoque)
+        itensEmEstoque.append(novoItem)
     }
-    
-    
-    func removerQuantidadeParaItem(_ item: Item) {
-        if let index = itens.firstIndex(where: { $0.id == item.id }) {
-            if itens[index].quantidade > 0 {
-                itens[index].quantidade -= 1
-            }
-        }
+
+    // Função para adicionar um item à lista de compras
+    func adicionarItemEmLista(nome: String, quantidade: Int) {
+        let novoItem = Item(nome: nome, quantidade: quantidade, status: .emLista)
+        itensEmLista.append(novoItem)
     }
 }
+
 

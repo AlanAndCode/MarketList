@@ -8,14 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = ListaDeComprasViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: CardVamosComprar(nome: "vamos compaa",viewModel: ListaDeComprasViewModel())) {
+                    Text("Vamos Comprar")
+                        .font(.title2)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding()
+
+                NavigationLink(destination: CardEstoque(nome: "Em Estoque",viewModel: CardEstoqueViewModel())) {
+                    Text("Nosso Estoque")
+                        .font(.title2)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding()
+
+               
+                .padding()
+            }
+            .navigationTitle("Tela Principal")
         }
-        .padding()
     }
 }
 

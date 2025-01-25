@@ -12,7 +12,9 @@ import SwiftUI
 class CardCadastrarItemViewModel: ObservableObject {
     @Published var nomeProduto: String = ""
     @Published var quantidade: String = ""
-
+    @Published var itensEmFalta: [Item] = []
+    @Published var itensEmEstoque: [Item] = []
+    @Published var itensEmLista: [Item] = []
     func cadastrarItem() {
  
         guard !nomeProduto.isEmpty, !quantidade.isEmpty else {
