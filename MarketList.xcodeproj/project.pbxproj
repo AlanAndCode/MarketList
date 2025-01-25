@@ -30,11 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E543C8FB2D3ACB7C002449B2 /* MarketList */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MarketList;
-			sourceTree = "<group>";
-		};
 		E543C90C2D3ACB80002449B2 /* MarketListTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MarketListTests;
@@ -43,6 +38,11 @@
 		E543C9162D3ACB80002449B2 /* MarketListUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MarketListUITests;
+			sourceTree = "<group>";
+		};
+		E543C9922D44912B002449B2 /* MarketList */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MarketList;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +75,7 @@
 		E543C8F02D3ACB7C002449B2 = {
 			isa = PBXGroup;
 			children = (
-				E543C8FB2D3ACB7C002449B2 /* MarketList */,
+				E543C9922D44912B002449B2 /* MarketList */,
 				E543C90C2D3ACB80002449B2 /* MarketListTests */,
 				E543C9162D3ACB80002449B2 /* MarketListUITests */,
 				E543C8FA2D3ACB7C002449B2 /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E543C8FB2D3ACB7C002449B2 /* MarketList */,
+				E543C9922D44912B002449B2 /* MarketList */,
 			);
 			name = MarketList;
 			packageProductDependencies = (
