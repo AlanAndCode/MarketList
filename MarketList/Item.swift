@@ -8,7 +8,7 @@
 import Foundation
 
 struct Item: Identifiable {
-    var id = UUID() 
+    var id = UUID()
     var nome: String
     var quantidade: Int
     var status: Status

@@ -8,39 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ListaDeComprasViewModel()
+    @StateObject private var listaDeComprasViewModel = ListaDeComprasViewModel()
+    @StateObject private var estoqueViewModel = CardEstoqueViewModel()
+    @StateObject private var cadastrarViewModel = CardCadastrarItemViewModel()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: CardVamosComprar(nome: "vamos compaa",viewModel: ListaDeComprasViewModel())) {
-                    Text("Vamos Comprar")
-                        .font(.title2)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                .padding()
 
-                NavigationLink(destination: CardEstoque(nome: "Em Estoque",viewModel: CardEstoqueViewModel())) {
-                    Text("Nosso Estoque")
-                        .font(.title2)
-                        .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+        TabView {
+            
+            CardCadastrarItem(nomeProduto: "", viewModel: cadastrarViewModel)
+                .tabItem {
+                    Label("Cadastrar", systemImage: "plus.circle")
                 }
-                .padding()
+            
+            CardEstoque(nome: "Produto Estoque", viewModel: CardEstoqueViewModel())
+                .tabItem {
+                    Label("Estoque", systemImage: "archivebox")
+                }
+            
+            
+            CardListaCompras(nome: "Vamos Comprar", viewModel: listaDeComprasViewModel)
+                .tabItem {
+                    Label("Comprar", systemImage: "cart")
+                }
 
-               
-                .padding()
-            }
-            .navigationTitle("Tela Principal")
         }
+        .accentColor(.red) // Cor dos ícones selecionados
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
