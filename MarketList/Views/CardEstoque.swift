@@ -12,50 +12,46 @@ struct CardEstoque: View {
     var nome: String
     @State private var quantidade = 0
     @ObservedObject var viewModel: CardEstoqueViewModel
-        var body: some View {
-            HStack {
-                List(viewModel.itensEmEstoque, id: \.id) { item in
-                    Text(item.nome)
-                }
-                .navigationTitle("Em Estoque")
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(nome)
-                        .font(.headline)
-                    
-                    Text("Quantidade: \(quantidade)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                
-                Spacer()
     
-                            Button(action: {
-                                quantidade += 1 // Incrementa a quantidade
-                            }) {
-                                Image(systemName: "plus.circle")
-                                    .font(.title2)
-                                    .foregroundColor(.green)
-                            }
-                            
-                            
-                            Button(action: {
-                                if quantidade > 0 { // Evita valores negativos
-                                    quantidade -= 1
-                                }
-                }) {
-                    Image(systemName: "minus.circle")
-                        .font(.title2)
-                        .foregroundColor(.red)
-                }
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(nome)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("Quantidade: \(quantidade)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
-            .padding()
-            .background(Color.yellow)
-            .cornerRadius(10)
-            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-            .padding(.horizontal)
+            
+            Button(action: {
+                quantidade += 1 
+            }) {
+                Image(systemName: "plus.circle")
+                    .font(.title2)
+                    .foregroundColor(.green)
+            }
+            
+            Button(action: {
+                if quantidade > 0 {
+                    quantidade -= 1
+                }
+            }) {
+                Image(systemName: "minus.circle")
+                    .font(.title2)
+                    .foregroundColor(.red)
+            }
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: 100)
+        .background(Color.yellow)
+        .cornerRadius(10)
+        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+        .padding(.horizontal)
     }
+        
+}
 
 #Preview {
-    CardEstoque(nome: "arroz", viewModel: CardEstoqueViewModel())
+    CardEstoque(nome: "Arroz", viewModel: CardEstoqueViewModel())
 }
