@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct CardCadastrarItem: View {
-    @State private var nomeProduto: String = ""
-    @State private var quantidade: String = ""
+    @State var nomeProduto: String = ""
+    @State var quantidade: String = ""
     @ObservedObject var viewModel: CardCadastrarItemViewModel
     var body: some View {
         ZStack {
