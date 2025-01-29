@@ -7,191 +7,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "22C71826-2B74-4EF1-9CF2-18FA6586D9E1"
+            uuid = "2D3499AB-D98A-4701-852B-B1E0D6DB2C5C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarketList/Views/CardVamosComprar.swift"
+            filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "CardVamosComprar"
-            landmarkType = "14">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "cadastrarItem()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7D5E6C2-A434-4FD4-978A-BEBF08BE9A59"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketList/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2B1EE32E-69BC-4558-ACF4-00C07EDF4AF5"
+            uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarketList/ContentView.swift"
+            filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketList/ViewModels/ListaDeComprasViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "ListaDeComprasViewModel"
-            landmarkType = "3">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "cadastrarItem()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 8315345a3adcc274"
+                  uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2 - 10666e7eff686acd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of MarketList.ListaDeComprasViewModel.itensEmFalta : Swift.Array&lt;MarketList.Item&gt;"
+                  symbolName = "MarketList.CardCadastrarItemViewModel.cadastrarItem() -&gt; ()"
                   moduleName = "MarketList.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
+                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardCadastrarItemViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26">
                </Location>
                <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 341bf41b885375c9"
+                  uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2 - 10666e7eff686b2e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.itensEmFalta.getter : Swift.Array&lt;MarketList.Item&gt;"
+                  symbolName = "MarketList.CardCadastrarItemViewModel.cadastrarItem() -&gt; ()"
                   moduleName = "MarketList.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
+                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardCadastrarItemViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 43fbf94ad7592641"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.itensEmFalta.setter : Swift.Array&lt;MarketList.Item&gt;"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 5bc47b195ed81272"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.itensEmFalta.modify : Swift.Array&lt;MarketList.Item&gt;"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 3bcfa1a9bdb176bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.itensEmFalta.modify : Swift.Array&lt;MarketList.Item&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 7dd2038c680e8ca5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.$itensEmFalta.getter : Combine.Published&lt;Swift.Array&lt;MarketList.Item&gt;&gt;.Publisher"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 8477a7e9d2091be5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.$itensEmFalta.setter : Combine.Published&lt;Swift.Array&lt;MarketList.Item&gt;&gt;.Publisher"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - 841221d5c905e416"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.$itensEmFalta.modify : Combine.Published&lt;Swift.Array&lt;MarketList.Item&gt;&gt;.Publisher"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/ListaDeComprasViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12">
-               </Location>
-               <Location
-                  uuid = "51E1D6E7-FF08-4A98-8B38-E07CD26B8FD4 - ce5e8c5dfc28115b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketList.ListaDeComprasViewModel.$itensEmFalta.modify : Combine.Published&lt;Swift.Array&lt;MarketList.Item&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "MarketList.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -199,17 +69,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84CBD8C5-478D-432C-82AD-9530AE0B1E9A"
+            uuid = "E6D2089D-FF38-4C61-8735-BC88B4CA898E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarketList/Views/CardCadastrarItem.swift"
+            filePath = "MarketList/Views/CardEstoque.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "CardCadastrarItem"
-            landmarkType = "14">
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D6F61A9-2D69-41FF-8716-A6117D0F9182"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/mj/t7c8ns2j10g2q2qy3y_g7c380000gn/T/swift-generated-sources/@__swiftmacro_10MarketList0022ContentViewswift_tiAIefMX39_0_33_46C6B6BE0D59194A36403EC0EB527CC4Ll7PreviewfMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78C4C25B-F578-431C-8E1E-F0825C1DFF63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/mj/t7c8ns2j10g2q2qy3y_g7c380000gn/T/swift-generated-sources/@__swiftmacro_10MarketList0022ContentViewswift_tiAIefMX39_0_33_46C6B6BE0D59194A36403EC0EB527CC4Ll7PreviewfMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
