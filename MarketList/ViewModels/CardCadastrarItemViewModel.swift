@@ -12,22 +12,33 @@ import SwiftUI
 class CardCadastrarItemViewModel: ObservableObject {
     @Published var nomeProduto: String = ""
     @Published var quantidade: String = ""
-    @Published var itensEmFalta: [Item] = []
-    @Published var itensEmEstoque: [Item] = []
-    @Published var itensEmLista: [Item] = []
+    var estoqueViewModel: CardEstoqueViewModel
+
+    init(estoqueViewModel: CardEstoqueViewModel) {
+        self.estoqueViewModel = estoqueViewModel
+    }
+
     func cadastrarItem() {
- 
-        guard !nomeProduto.isEmpty, !quantidade.isEmpty else {
-            print("Por favor, preencha todos os campos.")
-            return
-        }
-
-       
-        print("Item cadastrado com sucesso!")
-        print("Produto: \(nomeProduto), Quantidade: \(quantidade)")
-
+        let quantidadeInt = Int(quantidade) ?? 0
         
-        nomeProduto = ""
-        quantidade = ""
+        if !nomeProduto.isEmpty, quantidadeInt > 0 {
+            print("Item cadastrado com sucesso!")
+            print("Produto: \(nomeProduto), Quantidade: \(quantidadeInt)")
+            
+            let novoItem = Item(
+                nome: nomeProduto,
+                quantidade: quantidadeInt,
+                status: .emEstoque
+                
+            )
+           
+            estoqueViewModel.itens.append(novoItem)
+            estoqueViewModel.atualizarListas()
+
+            nomeProduto = ""
+            quantidade = ""
+        } else {
+            print("Por favor, preencha todos os campos corretamente.")
+        }
     }
 }

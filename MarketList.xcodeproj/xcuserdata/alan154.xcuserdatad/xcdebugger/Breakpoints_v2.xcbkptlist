@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D3499AB-D98A-4701-852B-B1E0D6DB2C5C"
+            uuid = "37F79453-E68F-44EE-806F-803FC077F991"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "cadastrarItem()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,95 +23,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2"
+            uuid = "5E1E264D-E1DA-4980-9B62-BD434AA89CB6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "cadastrarItem()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1314F6CE-77EC-42F7-BFD6-42AA6CF65335"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "cadastrarItem()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61AA5FD1-DD82-4C9D-949D-0D2CB844A842"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketList/ViewModels/CardCadastrarItemViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "cadastrarItem()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DF2EB62-1CAC-4B6B-9ECF-05DB13B1B053"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketList/ViewModels/CardEstoqueViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "CardEstoqueViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2 - 10666e7eff686acd"
+                  uuid = "8DF2EB62-1CAC-4B6B-9ECF-05DB13B1B053 - c660f74b3fce8e75"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MarketList.CardCadastrarItemViewModel.cadastrarItem() -&gt; ()"
+                  symbolName = "MarketList.CardEstoqueViewModel.atualizarListas() -&gt; ()"
                   moduleName = "MarketList.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardCadastrarItemViewModel.swift"
+                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardEstoqueViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
                </Location>
                <Location
-                  uuid = "8F9DF53E-F570-4618-B3B8-061C2450EFB2 - 10666e7eff686b2e"
+                  uuid = "8DF2EB62-1CAC-4B6B-9ECF-05DB13B1B053 - 92177e9df3668f79"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MarketList.CardCadastrarItemViewModel.cadastrarItem() -&gt; ()"
+                  symbolName = "closure #1 (MarketList.Item) -&gt; Swift.Bool in MarketList.CardEstoqueViewModel.atualizarListas() -&gt; ()"
                   moduleName = "MarketList.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardCadastrarItemViewModel.swift"
+                  urlString = "file:///Users/alan154/Desktop/HELLOapp/MarketList/MarketList/ViewModels/CardEstoqueViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25">
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E6D2089D-FF38-4C61-8735-BC88B4CA898E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketList/Views/CardEstoque.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D6F61A9-2D69-41FF-8716-A6117D0F9182"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../../var/folders/mj/t7c8ns2j10g2q2qy3y_g7c380000gn/T/swift-generated-sources/@__swiftmacro_10MarketList0022ContentViewswift_tiAIefMX39_0_33_46C6B6BE0D59194A36403EC0EB527CC4Ll7PreviewfMf_.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "78C4C25B-F578-431C-8E1E-F0825C1DFF63"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../../var/folders/mj/t7c8ns2j10g2q2qy3y_g7c380000gn/T/swift-generated-sources/@__swiftmacro_10MarketList0022ContentViewswift_tiAIefMX39_0_33_46C6B6BE0D59194A36403EC0EB527CC4Ll7PreviewfMf_.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2"
-            endingLineNumber = "2"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
