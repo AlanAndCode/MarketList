@@ -7,38 +7,37 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ContentView: View {
     @StateObject private var listaDeComprasViewModel = ListaDeComprasViewModel()
     @StateObject private var estoqueViewModel = CardEstoqueViewModel()
-    @StateObject private var cadastrarViewModel = CardCadastrarItemViewModel()
+    
+    @StateObject private var cadastrarViewModel: CardCadastrarItemViewModel
+
+    init() {
+        let estoqueViewModel = CardEstoqueViewModel()
+        _estoqueViewModel = StateObject(wrappedValue: estoqueViewModel)
+        _cadastrarViewModel = StateObject(wrappedValue: CardCadastrarItemViewModel(estoqueViewModel: estoqueViewModel))
+    }
 
     var body: some View {
-
         TabView {
-            
-            CardCadastrarItem(nomeProduto: "", viewModel: cadastrarViewModel)
+            CardCadastrarItem(viewModel: cadastrarViewModel)
                 .tabItem {
                     Label("Cadastrar", systemImage: "plus.circle")
                 }
-            
-            CardEstoque(nome: "Produto Estoque", viewModel: CardEstoqueViewModel())
+
+            CardEstoque(viewModel: estoqueViewModel)
                 .tabItem {
                     Label("Estoque", systemImage: "archivebox")
                 }
-            
-            
+
             CardListaCompras(nome: "Vamos Comprar", viewModel: listaDeComprasViewModel)
                 .tabItem {
                     Label("Comprar", systemImage: "cart")
                 }
-
         }
-        .accentColor(.red) // Cor dos ícones selecionados
+        .accentColor(.red)
     }
 }
-
-#Preview {
-    ContentView()
-}
-
-

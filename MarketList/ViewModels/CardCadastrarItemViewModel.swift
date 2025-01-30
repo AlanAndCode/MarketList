@@ -11,8 +11,9 @@ import SwiftUI
 
 class CardCadastrarItemViewModel: ObservableObject {
     @Published var nomeProduto: String = ""
-    @Published var quantidade: String = ""
-    var estoqueViewModel: CardEstoqueViewModel
+    @Published var quantidade: String = "" 
+
+    private var estoqueViewModel: CardEstoqueViewModel
 
     init(estoqueViewModel: CardEstoqueViewModel) {
         self.estoqueViewModel = estoqueViewModel
@@ -20,20 +21,18 @@ class CardCadastrarItemViewModel: ObservableObject {
 
     func cadastrarItem() {
         let quantidadeInt = Int(quantidade) ?? 0
-        
+
         if !nomeProduto.isEmpty, quantidadeInt > 0 {
             print("Item cadastrado com sucesso!")
             print("Produto: \(nomeProduto), Quantidade: \(quantidadeInt)")
-            
+
             let novoItem = Item(
                 nome: nomeProduto,
                 quantidade: quantidadeInt,
                 status: .emEstoque
-                
             )
-           
-            estoqueViewModel.itens.append(novoItem)
-            estoqueViewModel.atualizarListas()
+
+            estoqueViewModel.adicionarItem(item: novoItem)
 
             nomeProduto = ""
             quantidade = ""

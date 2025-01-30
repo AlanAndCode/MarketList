@@ -5,53 +5,64 @@
 //  Created by Alan Anderson Da silva Modesto on 25/01/2025.
 //
 
-
 import SwiftUI
 
 struct CardEstoque: View {
-    var nome: String
-    @State private var quantidade = 0
     @ObservedObject var viewModel: CardEstoqueViewModel
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(nome)
-                    .font(.headline)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Quantidade: \(quantidade)")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
+        ZStack {
+            Color.brown.ignoresSafeArea()
             
-            Button(action: {
-                quantidade += 1 
-            }) {
-                Image(systemName: "plus.circle")
-                    .font(.title2)
-                    .foregroundColor(.green)
-            }
-            
-            Button(action: {
-                if quantidade > 0 {
-                    quantidade -= 1
+            ScrollView {
+                VStack(spacing: 12) {
+                    if viewModel.itensEmEstoque.isEmpty {
+                        Text("Nenhum item em estoque")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                    } else {
+                        ForEach(viewModel.itensEmEstoque) { item in
+                            HStack {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(item.nome)
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Text("Quantidade: \(item.quantidade)")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                
+                                Button(action: {
+                                    viewModel.incrementarQuantidade(item: item)
+                                }) {
+                                    Image(systemName: "plus.circle")
+                                        .font(.title2)
+                                        .foregroundColor(.green)
+                                }
+                                
+                                Button(action: {
+                                    viewModel.decrementarQuantidade(item: item)
+                                }) {
+                                    Image(systemName: "minus.circle")
+                                        .font(.title2)
+                                        .foregroundColor(.red)
+                                }
+                            }
+                            .padding()
+                            .background(Color.yellow)
+                            .cornerRadius(10)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                            .padding(.horizontal)
+                        }
+                    }
                 }
-            }) {
-                Image(systemName: "minus.circle")
-                    .font(.title2)
-                    .foregroundColor(.red)
             }
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: 100)
-        .background(Color.yellow)
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
-        .padding(.horizontal)
+        .onAppear {
+            print("📌 CardEstoque apareceu na tela")
+            print("🔍 Itens em estoque:", viewModel.itensEmEstoque)
+        }
     }
-        
-}
-
-#Preview {
-    CardEstoque(nome: "Arroz", viewModel: CardEstoqueViewModel())
 }
