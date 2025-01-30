@@ -13,9 +13,19 @@ class CardEstoqueViewModel: ObservableObject {
     @Published var itens: [Item] = []
     @Published var itensEmFalta: [Item] = []
     @Published var itensEmEstoque: [Item] = []
-    @Published var itensEmLista: [Item] = []
 
-    // Método para incrementar a quantidade de um item
+    private weak var listaDeComprasViewModel: ListaDeComprasViewModel?
+
+    func setListaDeComprasViewModel(_ viewModel: ListaDeComprasViewModel) {
+        self.listaDeComprasViewModel = viewModel
+    }
+
+    func adicionarItem(item: Item) {
+        print("🟢 Adicionando item: \(item.nome) - Quantidade: \(item.quantidade)")
+        itens.append(item)
+        atualizarListas()
+    }
+
     func incrementarQuantidade(item: Item) {
         if let index = itens.firstIndex(where: { $0.id == item.id }) {
             itens[index].quantidade += 1
@@ -23,20 +33,23 @@ class CardEstoqueViewModel: ObservableObject {
         }
     }
 
-    // Método para decrementar a quantidade de um item
     func decrementarQuantidade(item: Item) {
         if let index = itens.firstIndex(where: { $0.id == item.id }) {
             if itens[index].quantidade > 0 {
                 itens[index].quantidade -= 1
                 atualizarListas()
+
+               
             }
         }
     }
 
-    // Método para atualizar as listas de itens
     private func atualizarListas() {
+        print("🔄 Atualizando listas de estoque...")
         itensEmEstoque = itens.filter { $0.quantidade > 0 }
         itensEmFalta = itens.filter { $0.quantidade == 0 }
-        // Adicione lógica para itensEmLista, se necessário
+
+        print("📌 Itens em estoque:", itensEmEstoque.map { "\($0.nome) (\($0.quantidade))" })
+        print("⚠️ Itens em falta:", itensEmFalta.map { "\($0.nome)" })
     }
 }
