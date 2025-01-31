@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct SplashView: View {
     @State private var isActive = false
     @State private var carrinhoOffset: CGFloat = -200
-    @State private var textoOpacity: Double = 0 // Controla a opacidade do texto
+    @State private var textoOpacity: Double = 0
 
     var body: some View {
         Group {
@@ -23,8 +23,8 @@ struct SplashScreen: View {
                         .ignoresSafeArea()
 
                     VStack {
-                        Image(systemName: "cart.fill")
-                            .font(.system(size: 100))
+                        Image("SplashTest")
+                            .font(.system(size: 10))
                             .foregroundColor(.white)
                             .offset(x: 0, y: carrinhoOffset)
 
@@ -32,7 +32,7 @@ struct SplashScreen: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .opacity(textoOpacity) // Controla a opacidade do texto
+                            .opacity(textoOpacity)
                     }
                 }
                 .onAppear {
@@ -40,14 +40,12 @@ struct SplashScreen: View {
                         carrinhoOffset = 0
                     }
 
-                    // Animação do texto
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation(.easeInOut(duration: 1)) {
                             textoOpacity = 1
                         }
                     }
 
-                    // Tempo de exibição da Splash Screen
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
                             isActive = true
@@ -59,14 +57,6 @@ struct SplashScreen: View {
     }
 }
 
-struct ContentView: View {
-    var body: some View {
-        Text("Tela Principal do Aplicativo")
-            .font(.largeTitle)
-            .padding()
-    }
-}
-
 #Preview {
-    SplashScreen()
+    SplashView()
 }
