@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CardListaCompras: View {
     var nome: String
     @ObservedObject var viewModel: ListaDeComprasViewModel
@@ -18,7 +20,28 @@ struct CardListaCompras: View {
                 .ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 12) {
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Vamos Comprar")
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+
+                        Button(action: {
+                            print("Config")
+                        }) {
+                            Image(systemName: "gearshape")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.horizontal)
+
+                    Divider()
+                        .background(Color.black)
+                        .padding(.horizontal)
+
                     if viewModel.itensEmLista.isEmpty {
                         Text("Nenhum item na lista de compras")
                             .font(.title)
@@ -46,7 +69,7 @@ struct CardListaCompras: View {
                                         .font(.title2)
                                         .foregroundColor(.green)
                                 }
-                                
+
                                 Button(action: {
                                     viewModel.decrementarQuantidade(item: item)
                                 }) {
@@ -63,11 +86,11 @@ struct CardListaCompras: View {
                         }
                     }
                 }
+    
             }
         }
     }
 }
-
 
 #Preview {
     let estoqueViewModel = CardEstoqueViewModel()
