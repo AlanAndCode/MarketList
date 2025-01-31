@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ContentView: View {
-    @StateObject private var listaDeComprasViewModel = ListaDeComprasViewModel()
     @StateObject private var estoqueViewModel = CardEstoqueViewModel()
-    
+    @StateObject private var listaDeComprasViewModel: ListaDeComprasViewModel
     @StateObject private var cadastrarViewModel: CardCadastrarItemViewModel
 
     init() {
         let estoqueViewModel = CardEstoqueViewModel()
+        let listaViewModel = ListaDeComprasViewModel(estoqueViewModel: estoqueViewModel)
+        
         _estoqueViewModel = StateObject(wrappedValue: estoqueViewModel)
+        _listaDeComprasViewModel = StateObject(wrappedValue: listaViewModel)
         _cadastrarViewModel = StateObject(wrappedValue: CardCadastrarItemViewModel(estoqueViewModel: estoqueViewModel))
-    }
+
+        estoqueViewModel.setListaDeComprasViewModel(listaViewModel)     }
 
     var body: some View {
         TabView {
