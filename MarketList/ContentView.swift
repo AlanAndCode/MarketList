@@ -34,7 +34,7 @@ struct ContentView: View {
                     Label("Estoque", systemImage: "archivebox")
                 }
 
-            CardListaCompras(nome: "Vamos Comprar", viewModel: listaDeComprasViewModel)
+            CardListaCompras(viewModel: listaDeComprasViewModel)
                 .tabItem {
                     Label("Comprar", systemImage: "cart")
                 }
