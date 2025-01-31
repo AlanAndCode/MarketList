@@ -15,46 +15,70 @@ struct CardEstoque: View {
             Color.brown.ignoresSafeArea()
             
             ScrollView {
-                VStack(spacing: 12) {
-                    if viewModel.itensEmEstoque.isEmpty {
-                        Text("Nenhum item em estoque")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .padding()
-                    } else {
-                        ForEach(viewModel.itensEmEstoque) { item in
-                            HStack {
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text(item.nome)
-                                        .font(.headline)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
+                
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Estoque")
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        
+                        Button(action: {
+                            print("Config")
+                        }) {
+                            Image(systemName: "gearshape")
+                                .font(.title)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    Divider()
+                        .background(Color.black)
+                        .padding(.horizontal)
+                    
+                    VStack(spacing: 12) {
+                        if viewModel.itensEmEstoque.isEmpty {
+                            Text("Nenhum item em estoque")
+                                .font(.title)
+                                .foregroundColor(.black)
+                                .padding()
+                        } else {
+                            ForEach(viewModel.itensEmEstoque) { item in
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        Text(item.nome)
+                                            .font(.headline)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        
+                                        Text("Quantidade: \(item.quantidade)")
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                    }
                                     
-                                    Text("Quantidade: \(item.quantidade)")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
+                                    Button(action: {
+                                        viewModel.incrementarQuantidade(item: item)
+                                    }) {
+                                        Image(systemName: "plus.circle")
+                                            .font(.title2)
+                                            .foregroundColor(.green)
+                                    }
+                                    
+                                    Button(action: {
+                                        viewModel.decrementarQuantidade(item: item)
+                                    }) {
+                                        Image(systemName: "minus.circle")
+                                            .font(.title2)
+                                            .foregroundColor(.red)
+                                    }
                                 }
-                                
-                                Button(action: {
-                                    viewModel.incrementarQuantidade(item: item)
-                                }) {
-                                    Image(systemName: "plus.circle")
-                                        .font(.title2)
-                                        .foregroundColor(.green)
-                                }
-                                
-                                Button(action: {
-                                    viewModel.decrementarQuantidade(item: item)
-                                }) {
-                                    Image(systemName: "minus.circle")
-                                        .font(.title2)
-                                        .foregroundColor(.red)
-                                }
+                                .padding()
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                                .padding(.horizontal)
                             }
-                            .padding()
-                            .background(Color.yellow)
-                            .cornerRadius(10)
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
-                            .padding(.horizontal)
                         }
                     }
                 }
@@ -65,4 +89,8 @@ struct CardEstoque: View {
             print("🔍 Itens em estoque:", viewModel.itensEmEstoque)
         }
     }
+}
+
+#Preview {
+    CardEstoque(viewModel: CardEstoqueViewModel())
 }
