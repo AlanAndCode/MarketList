@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CardListaCompras: View {
-    var nome: String
     @ObservedObject var viewModel: ListaDeComprasViewModel
 
     var body: some View {
@@ -99,5 +96,5 @@ struct CardListaCompras: View {
     listaDeComprasViewModel.adicionarItemEmLista(nome: "Arroz", quantidade: 0)
     listaDeComprasViewModel.adicionarItemEmLista(nome: "Feijão", quantidade: 0)
     
-    return CardListaCompras(nome: "Vamos Comprar", viewModel: listaDeComprasViewModel)
+    return CardListaCompras( viewModel: listaDeComprasViewModel)
 }
