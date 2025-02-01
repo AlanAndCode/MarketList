@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CardCadastrarItem: View {
-    @ObservedObject var viewModel: CardCadastrarItemViewModel
+    @StateObject var viewModel: CardCadastrarItemViewModel
     
     var body: some View {
         ZStack {
@@ -33,16 +33,20 @@ struct CardCadastrarItem: View {
                     Text("Cadastrar Item")
                         .font(.headline)
                         .padding(.bottom, 8)
-                    
+                       .foregroundColor(.black)
                     TextField("Nome do Produto", text: $viewModel.nomeProduto)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
-                    
+                        .background(Color.white)
+                        .foregroundColor(.white)
+
                     TextField("Quantidade", text: $viewModel.quantidade)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                         .keyboardType(.numberPad)
-                    
+                        .background(Color.white)
+                        .foregroundColor(.white)
+                     
                     Button(action: {
                         viewModel.cadastrarItem()
                     }) {
@@ -67,8 +71,4 @@ struct CardCadastrarItem: View {
             }
         }
     }
-}
-
-#Preview {
-    CardCadastrarItem(viewModel: CardCadastrarItemViewModel(estoqueViewModel: CardEstoqueViewModel()))
 }
