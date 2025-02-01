@@ -40,7 +40,7 @@ struct CardEstoque: View {
                     
                     VStack(spacing: 12) {
                         if viewModel.itensEmEstoque.isEmpty {
-                            Text("Nenhum item em estoque")
+                            Text("Nenhum item em Estoque")
                                 .font(.title)
                                 .foregroundColor(.black)
                                 .padding()
@@ -51,26 +51,31 @@ struct CardEstoque: View {
                                         Text(item.nome)
                                             .font(.headline)
                                             .frame(maxWidth: .infinity, alignment: .leading)
+                                            .foregroundColor(.black)
                                         
                                         Text("Quantidade: \(item.quantidade)")
                                             .font(.subheadline)
-                                            .foregroundColor(.secondary)
+                                            .foregroundColor(.black)
                                     }
                                     
                                     Button(action: {
                                         viewModel.incrementarQuantidade(item: item)
                                     }) {
                                         Image(systemName: "plus.circle")
-                                            .font(.title2)
+                                            .resizable()
+                                            .scaledToFit()
                                             .foregroundColor(.green)
+                                            .frame(width: 30, height: 30)
                                     }
                                     
                                     Button(action: {
                                         viewModel.decrementarQuantidade(item: item)
                                     }) {
                                         Image(systemName: "minus.circle")
-                                            .font(.title2)
+                                            .resizable()
+                                            .scaledToFit()
                                             .foregroundColor(.red)
+                                            .frame(width: 30, height: 30)
                                     }
                                 }
                                 .padding()
