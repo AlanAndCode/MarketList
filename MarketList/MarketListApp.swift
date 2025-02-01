@@ -12,7 +12,7 @@ import SwiftUI
 struct MarketListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
