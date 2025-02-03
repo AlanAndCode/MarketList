@@ -6,23 +6,29 @@
 //
 
 
+import SwiftUI
+
 struct SettingsView: View {
     @Binding var itemThreshold: String
-    @Environment(\.presentationMode) var presentationMode
-
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Configuração")) {
-                    TextField("A partir de quantos itens?", text: $itemThreshold)
+                    TextField("Numero de itens necessarios para ser transeferido para o estoque", text: $itemThreshold)
                         .keyboardType(.numberPad)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            dismiss()
+                        }
                 }
             }
-            .navigationTitle("Configurar Limite")
+            .navigationTitle("A partir de quantos itens voce quer que va para o estoque ")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Salvar") {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     }
                 }
             }
