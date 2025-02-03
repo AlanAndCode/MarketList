@@ -38,15 +38,14 @@ class ListaDeComprasViewModel: ObservableObject {
     
     private func atualizarListas() {
         itensEmEstoque = itens.filter { $0.quantidade > 0 }
-        itensEmLista = itens.filter { $0.quantidade == 0 }
 
-        print("📌 Itens em estoque:", itensEmEstoque.map { "\($0.nome) (\($0.quantidade))" })
-        print("⚠️ Itens em falta:", itensEmLista.map { "\($0.nome)" })
+        print("Itens em estoque:", itensEmEstoque.map { "\($0.nome) (\($0.quantidade))" })
+        print("Itens em falta:", itensEmLista.map { "\($0.nome)" })
     }
     
     private func moverItemParaEstoque(item: Item) {
         estoqueViewModel.adicionarItem(item: item)
-        print("📦 Item movido para o estoque: \(item.nome)")
+        print("Item movido para o estoque: \(item.nome)")
     }
 
     func adicionarItemEmLista(nome: String, quantidade: Int) {
