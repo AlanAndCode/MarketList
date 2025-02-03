@@ -10,12 +10,14 @@ import SwiftUI
 
 struct CardListaCompras: View {
     @ObservedObject var viewModel: ListaDeComprasViewModel
-
+    @State private var showingConfig = false
+    @State private var itemThreshold: String = ""
+    
     var body: some View {
         ZStack {
             Color.green
                 .ignoresSafeArea()
-
+            
             ScrollView {
                 VStack(spacing: 8) {
                     HStack {
@@ -24,21 +26,26 @@ struct CardListaCompras: View {
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .center)
-
+                        
+                        
                         Button(action: {
-                            print("Config")
+                            showingConfig.toggle()
                         }) {
                             Image(systemName: "gearshape")
                                 .font(.title)
                                 .foregroundColor(.white)
                         }
+                        .sheet(isPresented: $showingConfig) {
+                            SettingsView(itemThreshold: $itemThreshold)
+                        }
+                        
                     }
                     .padding(.horizontal)
-
+                    
                     Divider()
                         .background(Color.black)
                         .padding(.horizontal)
-
+                    
                     if viewModel.itensEmLista.isEmpty {
                         Text("Nenhum item na lista de compras")
                             .font(.title)
@@ -56,9 +63,9 @@ struct CardListaCompras: View {
                                         .font(.subheadline)
                                         .foregroundColor(.black)
                                 }
-
+                                
                                 Spacer()
-
+                                
                                 Button(action: {
                                     viewModel.incrementarQuantidade(item: item)
                                 }) {
@@ -68,7 +75,7 @@ struct CardListaCompras: View {
                                         .foregroundColor(.green)
                                         .frame(width: 30, height: 30)
                                 }
-
+                                
                                 Button(action: {
                                     viewModel.decrementarQuantidade(item: item)
                                 }) {
@@ -87,7 +94,6 @@ struct CardListaCompras: View {
                         }
                     }
                 }
-    
             }
         }
     }
