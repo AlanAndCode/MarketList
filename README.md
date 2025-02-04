@@ -1,4 +1,4 @@
-z# MarketList  
+# MarketList  
 
 **MarketList** é um aplicativo de lista de compras desenvolvido em **SwiftUI** para ajudar os usuários a gerenciar seus itens de compra e estoque doméstico de forma eficiente. O projeto utiliza conceitos modernos de desenvolvimento iOS, incluindo arquitetura baseada em `ViewModel` com `ObservableObject`, além de recursos como notificações personalizadas e estados vazios para melhorar a experiência do usuário.  
 
