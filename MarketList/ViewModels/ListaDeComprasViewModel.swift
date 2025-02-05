@@ -19,22 +19,26 @@ class ListaDeComprasViewModel: ObservableObject {
     }
 
     func incrementarQuantidade(item: Item) {
-        if let index = itensEmLista.firstIndex(where: { $0.id == item.id }) {
-            itensEmLista[index].quantidade += 1
-            moverItemParaEstoque(item: itensEmLista[index])
-            itensEmLista.remove(at: index)
-        }
-    }
-    
-    func decrementarQuantidade(item: Item) {
-        if let index = itens.firstIndex(where: { $0.id == item.id }) {
-            if itens[index].quantidade > 0 {
-                itens[index].quantidade -= 1
-                atualizarListas()
+            if let index = itensEmLista.firstIndex(where: { $0.id == item.id }) {
+                itensEmLista[index].quantidade += 1
                 
+                let threshold = AppSettings.shared.itemThreshold
+                if itensEmLista[index].quantidade >= threshold {
+                    moverItemParaEstoque(item: itensEmLista[index])
+                    itensEmLista.remove(at: index)
+                }
             }
         }
-    }
+    
+    func decrementarQuantidade(item: Item) {
+        if let index = itensEmLista.firstIndex(where: { $0.id == item.id }) {
+            if itensEmLista[index].quantidade > 0 {
+                itensEmLista[index].quantidade -= 1
+                atualizarListas()
+            }
+        }
+        }
+
     
     private func atualizarListas() {
         itensEmEstoque = itens.filter { $0.quantidade > 0 }

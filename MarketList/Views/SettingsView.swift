@@ -9,22 +9,19 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var settings = AppSettings.shared
     @Binding var itemThreshold: String
     @Environment(\.dismiss) var dismiss
-    
+
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Configuração")) {
-                    TextField("Numero de itens necessarios para ser transeferido para o estoque", text: $itemThreshold)
-                        .keyboardType(.numberPad)
-                        .submitLabel(.done)
-                        .onSubmit {
-                            dismiss()
-                        }
+                    Stepper("Mover para estoque a partir de \(settings.itemThreshold) itens", value: $settings.itemThreshold, in: 1...100)
+                        .padding()
                 }
             }
-            .navigationTitle("A partir de quantos itens voce quer que va para o estoque ")
+            .navigationTitle("Configuração do Estoque")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Salvar") {

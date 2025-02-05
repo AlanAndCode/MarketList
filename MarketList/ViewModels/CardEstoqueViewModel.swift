@@ -38,8 +38,8 @@ class CardEstoqueViewModel: ObservableObject {
             if itens[index].quantidade > 0 {
                 itens[index].quantidade -= 1
                 atualizarListas()
-
-                if itens[index].quantidade == 0 {
+                let threshold = AppSettings.shared.itemThreshold
+                if itens[index].quantidade == threshold {
                     moverItemParaListaDeCompras(item: itens[index])
                 }
             }

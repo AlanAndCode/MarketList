@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardEstoque: View {
     @ObservedObject var viewModel: CardEstoqueViewModel
+    @State private var showingConfig = false
+    @State private var itemThreshold: String = ""
     
     var body: some View {
         ZStack {
@@ -25,11 +27,14 @@ struct CardEstoque: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                         
                         Button(action: {
-                            print("Config")
+                            showingConfig.toggle()
                         }) {
                             Image(systemName: "gearshape")
                                 .font(.title)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
+                        }
+                        .sheet(isPresented: $showingConfig) {
+                            SettingsView(itemThreshold: $itemThreshold)
                         }
                     }
                     .padding(.horizontal)

@@ -38,14 +38,14 @@ struct CardCadastrarItem: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                         .background(Color.white)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
 
                     TextField("Quantidade", text: $viewModel.quantidade)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                         .keyboardType(.numberPad)
                         .background(Color.white)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                      
                     Button(action: {
                         viewModel.cadastrarItem()
