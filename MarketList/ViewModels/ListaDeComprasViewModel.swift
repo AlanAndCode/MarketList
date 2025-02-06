@@ -57,4 +57,12 @@ class ListaDeComprasViewModel: ObservableObject {
         itensEmLista.append(novoItem)
     }
     
+    
+    func deleteItem(item: Item) {
+        if let index = itensEmLista.firstIndex(of: item) {
+            itensEmLista.remove(at: index)
+            print("Item removido da lista: \(item.nome)")
+        }
+    }
+
 }
