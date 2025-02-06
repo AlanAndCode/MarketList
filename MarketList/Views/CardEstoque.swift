@@ -31,10 +31,10 @@ struct CardEstoque: View {
                         }) {
                             Image(systemName: "gearshape")
                                 .font(.title)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                         .sheet(isPresented: $showingConfig) {
-                            SettingsView(itemThreshold: $itemThreshold)
+                            SettingsView(itemThreshold: $itemThreshold, source: .estoque)
                         }
                     }
                     .padding(.horizontal)

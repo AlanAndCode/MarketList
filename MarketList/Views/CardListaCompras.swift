@@ -36,7 +36,7 @@ struct CardListaCompras: View {
                                 .foregroundColor(.white)
                         }
                         .sheet(isPresented: $showingConfig) {
-                            SettingsView(itemThreshold: $itemThreshold)
+                            SettingsView(itemThreshold: $itemThreshold, source: .lista)
                         }
                         
                     }
