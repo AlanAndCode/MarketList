@@ -10,12 +10,13 @@ import SwiftUI
 
 struct CardCadastrarItem: View {
     @StateObject var viewModel: CardCadastrarItemViewModel
-    
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+
     var body: some View {
         ZStack {
-            Color.yellow
-                .ignoresSafeArea()
-            
+            Color.yellow.ignoresSafeArea()
+
             VStack {
                 HStack {
                     Image(systemName: "cart")
@@ -24,16 +25,17 @@ struct CardCadastrarItem: View {
                         .frame(width: 100, height: 100)
                         .foregroundColor(.black)
                         .padding(.leading, 20)
-                    
+
                     Spacer()
                 }
                 .padding(.bottom, 40)
-                
+
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Cadastrar Item")
                         .font(.headline)
+                        .foregroundColor(.black)
                         .padding(.bottom, 8)
-                       .foregroundColor(.black)
+
                     TextField("Nome do Produto", text: $viewModel.nomeProduto)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
@@ -46,9 +48,11 @@ struct CardCadastrarItem: View {
                         .keyboardType(.numberPad)
                         .background(Color.white)
                         .foregroundColor(.black)
-                     
+
                     Button(action: {
-                        viewModel.cadastrarItem()
+                        let message = viewModel.cadastrarItem()
+                        alertMessage = message
+                        showingAlert = true
                     }) {
                         HStack {
                             Spacer()
@@ -69,6 +73,9 @@ struct CardCadastrarItem: View {
                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 .padding(.horizontal)
             }
+        }
+        .alert(alertMessage, isPresented: $showingAlert) {
+            Button("OK", role: .cancel) {}
         }
     }
 }
