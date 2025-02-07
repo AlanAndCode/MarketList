@@ -82,6 +82,16 @@ struct CardEstoque: View {
                                             .foregroundColor(.red)
                                             .frame(width: 30, height: 30)
                                     }
+                                    
+                                    Button(action: {
+                                        viewModel.deleteItem(item: item)
+                                    }) {
+                                        Image(systemName: "trash")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(.gray)
+                                            .frame(width: 30, height: 30)
+                                    }
                                 }
                                 .padding()
                                 .background(Color.yellow)
