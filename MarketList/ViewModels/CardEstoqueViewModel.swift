@@ -38,8 +38,7 @@ class CardEstoqueViewModel: ObservableObject {
             if itens[index].quantidade > 0 {
                 itens[index].quantidade -= 1
                 atualizarListas()
-                let threshold = AppSettings.shared.itemThreshold
-                if itens[index].quantidade == threshold {
+                if itens[index].quantidade <= AppSettings.shared.itemThreshold {
                     moverItemParaListaDeCompras(item: itens[index])
                 }
             }
@@ -51,22 +50,33 @@ class CardEstoqueViewModel: ObservableObject {
             print("ListaDeComprasViewModel não foi definido.")
             return
         }
-
-        itens.removeAll { $0.id == item.id }
-
-        listaDeComprasViewModel.adicionarItemEmLista(nome: item.nome, quantidade: item.quantidade)
-
-        atualizarListas()
-
-        print("Item movido para a lista de compras: \(item.nome)")
+        
+        if let index = itens.firstIndex(where: { $0.id == item.id }) {
+            let itemRemovido = itens.remove(at: index)
+            
+            var itemAtualizado = itemRemovido
+            itemAtualizado.status = .emLista
+            
+            listaDeComprasViewModel.itensEmLista.append(itemAtualizado)
+            
+            atualizarListas()
+            
+            print("Item movido para a lista de compras: \(item.nome)")
+        }
     }
 
     private func atualizarListas() {
         print("Atualizando listas de estoque...")
         itensEmEstoque = itens.filter { $0.quantidade > 0 }
         itensEmLista = itens.filter { $0.quantidade == 0 }
-
         print("Itens em estoque:", itensEmEstoque.map { "\($0.nome) (\($0.quantidade))" })
         print("Itens em falta:", itensEmLista.map { "\($0.nome)" })
+    }
+    
+    func deleteItem(item: Item) {
+        if let index = itensEmEstoque.firstIndex(of: item) {
+            itensEmEstoque.remove(at: index)
+            print("Item removido da lista: \(item.nome)")
+        }
     }
 }

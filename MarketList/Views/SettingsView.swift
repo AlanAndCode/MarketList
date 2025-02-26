@@ -12,7 +12,7 @@ struct SettingsView: View {
     @ObservedObject var settings = AppSettings.shared
     @Binding var itemThreshold: String
     @Environment(\.dismiss) var dismiss
-    var source: ViewSource 
+    var source: ViewSource
 
         var body: some View {
             NavigationStack {
